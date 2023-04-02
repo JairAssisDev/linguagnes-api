@@ -1,9 +1,19 @@
 package com.jair.linguagnes.api;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collation = "principaisLinguagens")
 public class Linguagem {
+    @Id
+    private String id;
     private String title;
     private String image;
     private int ranking;
+
+    public Linguagem(){
+        
+    }
 
     
     public Linguagem(String title, String image, int ranking) {
@@ -20,6 +30,8 @@ public class Linguagem {
     public int getRanking() {
         return ranking;
     }
-
+    public String getId() {
+        return id;
+    }
     
 }
